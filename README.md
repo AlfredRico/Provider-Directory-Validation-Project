@@ -100,7 +100,7 @@ This project uses a synthetic provider operations dataset created to simulate re
 
 The goal was to create a realistic environment for data cleaning, validation, and exploratory analysis focused on provider directory reliability and claims processing readiness.
 
-```
+
 ---
 
 ## Ecosystem
