@@ -1,0 +1,87 @@
+# =========================
+# PYTHON
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# =========================
+# PYTHON VERSION (UV / pyenv)
+# =========================
+.python-version
+
+# =========================
+# ENTRY / LOCAL RUN FILES
+# =========================
+main.py
+
+# =========================
+# BUILD / PACKAGING
+# =========================
+build/
+dist/
+*.egg-info/
+wheels/
+
+# =========================
+# VIRTUAL ENVIRONMENT
+# =========================
+.venv/
+env/
+venv/
+
+# =========================
+# JUPYTER
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# DATA FILES (IMPORTANT)
+# =========================
+data/*
+*.csv
+*.parquet
+*.xlsx
+*.json
+*.zip
+
+# =========================
+# ALLOWED FILES
+# =========================
+!data/provider_validation_dataset.csv
+
+
+# =========================
+# OUTPUTS / GENERATED FILES
+# =========================
+outputs/
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# =========================
+# SCRATCH / TEMP FILES
+# =========================
+scratch/
+temp/
+*.log
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / EDITOR
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OPTIONAL: KEEP SAMPLE DATA
+# =========================
+# Uncomment if needed:
+# !data/sample.csv
