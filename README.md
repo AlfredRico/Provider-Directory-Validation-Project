@@ -1,7 +1,6 @@
 # Provider Directory Data Validation & Quality Analysis
 
 ---
-
 ## Overview
 
 This project focuses on validating and cleaning provider directory data to improve reliability before analysis. The goal is to identify issues like missing values, duplicate records, inconsistent formatting, invalid entries, and outliers that can create problems in provider operations and claims processing. Once the data is cleaned and structured, the analysis can be used to support clearer reporting, stronger provider records, and better decision making across credentialing and claims readiness.
@@ -17,18 +16,15 @@ This project focuses on validating and cleaning provider directory data to impro
 * Without structured validation, provider data cannot be confidently used for reporting, decision making, or claims readiness assessments.
 
 ---
-
 ## Key Insights
 
-* Missing values were not evenly distributed and appeared more frequently in credentialing related fields, indicating that the areas most critical for claims readiness were also the least reliable.
-* Duplicate records often shared similar names but differed in identifiers or formatting, showing that simple matching is not enough to resolve provider duplication issues.
-* Invalid NPIs and mixed date formats required standardization before any analysis, reinforcing that validation must come before reporting.
-* Providers with higher claim denials also tended to have inconsistent or incomplete records, suggesting a link between data quality and operational outcomes.
-* Cleaning and standardizing categorical fields significantly improved grouping accuracy, making provider segmentation more consistent across specialties and locations.
-* After validation, it became easier to isolate providers contributing to delays and errors, allowing the data to be used more reliably for operational review and reporting. 
+* Exact duplicate rows were removed, while repeated names such as `Maria Lopez` were confirmed to be separate providers with different `Provider_ID` and `NPI_Number` values. This shows why provider matching should rely on true identifiers rather than provider names alone.
+* Fields such as `Specialty`, `License_State`, and `Insurance_Network_Status` contained formatting issues, spelling errors, and mixed naming conventions. Standardizing these fields improves grouped analysis and reporting accuracy.
+* ZIP code validation standardized valid records into 5-digit text format, but 434 records still contain missing ZIP values. These should remain flagged for review rather than being filled with assumptions.
+* `Last_Credentialing_Review_Date` contained mixed date formats that affected time-based reporting. Most valid dates were standardized, whil e 370 invalid values remain flagged for manual review.
+* Final NPI validation showed that 526 records still do not meet the required 10-digit structure. Since NPI numbers are critical for credentialing and payer matching, these remain a high priority issue.
 
 ---
-
 ## Reproducibility
 
 This project uses **UV** for fast, deterministic environment management.
@@ -39,7 +35,6 @@ Install UV (official guide):
 https://docs.astral.sh/uv/getting-started/
 
 ---
-
 ### ▶️ Run Locally (Step-by-Step)
 
 ```bash
@@ -55,7 +50,6 @@ uv run jupyter lab
 ```
 
 ---
-
 ### 📂 Open the Project
 
 Once Jupyter Lab opens in your browser:
@@ -70,7 +64,6 @@ Once Jupyter Lab opens in your browser:
 3. Run all cells from top to bottom  
 
 ---
-
 ### 🧠 Notes
 
 - The environment is fully defined by:
@@ -80,7 +73,6 @@ Once Jupyter Lab opens in your browser:
 - Results are fully reproducible across systems  
 
 ---
-
 ## Project Structure
 
 ```
@@ -93,7 +85,6 @@ provider_directory_validation_project/
 ```
 
 ---
-
 ## Data Source
 
 This project uses a synthetic provider operations dataset created to simulate real provider directory and claims readiness challenges. The dataset was designed to reflect common operational issues such as missing values, duplicate records, invalid NPIs, inconsistent formatting, incorrect dates, and outliers across provider records.
@@ -102,7 +93,6 @@ The goal was to create a realistic environment for data cleaning, validation, an
 
 
 ---
-
 ## Ecosystem
 
 * Portfolio webpage → Project hub and navigation: https://alfredrico.github.io/  
